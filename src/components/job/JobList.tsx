@@ -1,4 +1,4 @@
-import { useJobs } from "../../hooks/jobs/useJobs"
+
 import { SingleJob } from "../../interfaces/jobs/jobs"
 import { JobCard } from "./JobCard"
 

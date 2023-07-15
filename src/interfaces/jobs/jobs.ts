@@ -7,7 +7,7 @@ export interface Jobs {
 }
 
 export interface SingleJob {
-    id?: string,
+    id: string,
     name: string
     professionaldegree: boolean,
     descrition: string,

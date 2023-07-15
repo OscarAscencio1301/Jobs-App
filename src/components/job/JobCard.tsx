@@ -22,6 +22,7 @@ export const JobCard = ({id, date, descrition, name, professionaldegree, type, s
             </div>
             <div className="p-6 flex flex-col gap-6 it text-center">
                 <h1 className="text-5xl">{type}</h1>
+                <h3 className="text-5xl">{date}</h3>
                 <p>{descrition}</p>
                 <div className="flex items-center gap-3">
                     <div className="" onClick={likeButton}>
