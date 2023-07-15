@@ -20,9 +20,9 @@ export const Navbar = () => {
           <FaBars color="white" size="25px" />
         </div>
         <div className="hidden lg:flex gap-20" onClick={changeView}>
-          <Link to={'/'} className='text-2xl text-white hover:scale-125'>Jobs</Link>
-          <Link to={'/favorites'} className='text-2xl text-white hover:scale-125'>Favorites</Link>
-          <Link to={'/selected'} className='text-2xl text-white hover:scale-125'>Selected</Link>
+          <Link to={'/'} className='link'>Empleos</Link>
+          <Link to={'/favorites'} className='link'>Favoritos</Link>
+          <Link to={'/selected'}className='link'>Aplicados</Link>
         </div>
       </div>
       <Mobile viewMobile={viewMobile} changeView={changeView} />
