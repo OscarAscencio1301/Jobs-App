@@ -10,7 +10,7 @@ export interface SingleJob {
     id: string,
     name: string
     professionaldegree: boolean,
-    descrition: string,
+    description: string,
     type: string,
     status?: boolean
     date: string

@@ -17,6 +17,9 @@ export const jobSlice = createSlice({
             state.jobs = action.payload
             state.jobsFilter = action.payload
         },
+        activateJob: (state, action) => {
+            state.jobSelect = action.payload
+        },
         selectJob: (state, action) => {
             state.jobsSelected.push(action.payload)
         },
@@ -40,4 +43,4 @@ export const jobSlice = createSlice({
 
 })
 
-export const { searchJob, filterJob, viewJob, selectJob, likeJob, orderJob } = jobSlice.actions;
+export const { activateJob, searchJob, filterJob, viewJob, selectJob, likeJob, orderJob } = jobSlice.actions;
