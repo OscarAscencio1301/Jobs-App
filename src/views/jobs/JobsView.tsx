@@ -20,14 +20,12 @@ export const JobsView = () => {
 
     useEffect(() => {
         getJobs()
-        console.log(jobs)
     }, [])
 
 
     return (
         <>
             <div className="container mx-auto p-6">
-                <ModalJob />
                 <Search />
                 <FilterJobs />
                 <JobList jobs={jobs} />

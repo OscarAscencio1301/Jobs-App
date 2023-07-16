@@ -1,3 +1,4 @@
 export interface Componentes {
-    isOpenModal: boolean
+    isOpenModal: boolean,
+    isOpenAlert: boolean,
 }

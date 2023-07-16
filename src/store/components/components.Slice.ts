@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Componentes } from "../../interfaces/components/components";
 
 const initialState: Componentes = {
-    isOpenModal: false
+    isOpenModal: false,
+    isOpenAlert: false,
 }
 
 
@@ -12,8 +13,11 @@ export const componentsSlice = createSlice({
     reducers: {
         changeModal: (state) => {
             state.isOpenModal = !state.isOpenModal
+        },
+        changeAlert: (state) => {
+            state.isOpenAlert = !state.isOpenAlert
         }
     }
 })
 
-export const { changeModal } = componentsSlice.actions
+export const { changeModal, changeAlert } = componentsSlice.actions
