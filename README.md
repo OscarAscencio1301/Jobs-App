@@ -10,3 +10,18 @@ Las herramientas utilizadas son:
 - Typescript
 - Tailwind CSS
 - MirageJS
+
+Ejecuciones
+
+- Entorno de Desarrollo
+  
+  `npm run dev`
+
+- Entorno de Producción
+
+  `npm run build`
+
+
+- Entorno de Pruebas
+  
+  `npm run test`

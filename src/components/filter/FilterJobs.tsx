@@ -1,6 +1,6 @@
 import { useJobs } from "../../hooks/jobs/useJobs"
 
-const filters = [
+export const filters = [
     {
         id: 1,
         label: 'Tiempo Completo'
