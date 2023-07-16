@@ -5,8 +5,6 @@ import { Search } from "../../components/search/Search";
 import { useJobs } from "../../hooks/jobs/useJobs"
 import { createServer } from 'miragejs';
 import { data } from "../../data/data";
-import { ModalJob } from "../../components/modal/ModalJob";
-
 createServer({
     routes() {
         this.get('/api/jobs', () => {
