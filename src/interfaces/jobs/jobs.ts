@@ -13,6 +13,8 @@ export interface SingleJob {
     description: string,
     type: string,
     status?: boolean
-    date: string
+    date: string,
+    selected: string,
+    favorite: string
 }
 

@@ -5,6 +5,7 @@ import { Search } from "../../components/search/Search";
 import { useJobs } from "../../hooks/jobs/useJobs"
 import { createServer } from 'miragejs';
 import { data } from "../../data/data";
+import { JobCard } from "../../components/job/JobCard";
 createServer({
     routes() {
         this.get('/api/jobs', () => {

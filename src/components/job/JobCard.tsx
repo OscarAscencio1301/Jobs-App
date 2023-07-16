@@ -1,20 +1,21 @@
 import { AiOutlineHeart } from "react-icons/ai";
+import { FaHeart } from "react-icons/fa";
 import { SingleJob } from "../../interfaces/jobs/jobs"
 import { useJobs } from "../../hooks/jobs/useJobs"
 import { useComponents } from "../../hooks/components/useComponents"
 
-export const JobCard = ({ id, date, description, name, professionaldegree, type, status }: SingleJob) => {
+export const JobCard = ({ id, date, description, name, professionaldegree, type, status, selected, favorite }: SingleJob) => {
 
     const { activateJobAction, likeJobAction } = useJobs()
     const { changeViewModal } = useComponents()
 
     const addButton = () => {
-        activateJobAction({ id, date, description, name, professionaldegree, type, status })
+        activateJobAction({ id, date, description, name, professionaldegree, type, status, selected, favorite })
         changeViewModal()
     }
 
     const likeButton = () => {
-        likeJobAction({ id, date, description, name, professionaldegree, type, status })
+        likeJobAction({ id, date, description, name, professionaldegree, type, status, selected, favorite })
     }
 
     return (
@@ -28,7 +29,12 @@ export const JobCard = ({ id, date, description, name, professionaldegree, type,
                 <h3 className="text-xl">{date}</h3>
                 <div className="flex items-center gap-3">
                     <div className="cursor-pointer" onClick={likeButton}>
-                        <AiOutlineHeart color="green" size="35px" />
+                        {
+                            favorite ?
+                                <AiOutlineHeart color="green" size="35px" />
+                                :
+                                <FaHeart color="green" size="35px" />
+                        }
                     </div>
                     <button className="bg-green-600 text-white py-2 px-10 rounded-md flex-1" onClick={addButton}>Conocer más</button>
 
