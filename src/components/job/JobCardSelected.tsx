@@ -1,8 +1,13 @@
-
+import { useJobs } from "../../hooks/jobs/useJobs"
 import { SingleJob } from "../../interfaces/jobs/jobs"
 
-export const JobCardActive = ({ date, name, type }: SingleJob) => {
+export const JobCardSelected = ({ id, date, description, name, professionaldegree, type, status, selected, favorite }: SingleJob) => {
 
+  const { deleteJobAction } = useJobs()
+
+  const deleteBTN = () => {
+    deleteJobAction({ id, date, description, name, professionaldegree, type, status, selected, favorite })
+  }
 
   return (
     <div className="card border rounded-lg flex">
@@ -13,7 +18,7 @@ export const JobCardActive = ({ date, name, type }: SingleJob) => {
       <div className="p-6 flex flex-col gap-6 it text-center">
         <h1 className="text-xl">{name}</h1>
         <h1 className="text-lg">{type}</h1>
-        <h1 className="text-lg">{date}</h1>
+        <button className="bg-red-600 text-white py-1 px-5 rounded-md flex-1" onClick={deleteBTN} >Cancelar</button>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { GlobalSlice } from "../../interfaces/global/global"
 import { Jobs, SingleJob } from "../../interfaces/jobs/jobs"
-import { activateJob, filterJob, likeJob, orderJob, searchJob, selectJob, viewJob } from "../../store/jobs/jobs.Slice"
+import { activateJob, deleteJob, filterJob, likeJob, orderJob, searchJob, selectJob, viewJob } from "../../store/jobs/jobs.Slice"
 
 
 export const useJobs = () => {
@@ -15,6 +15,9 @@ export const useJobs = () => {
     }
     const activateJobAction = (job: SingleJob) => {
         dispatch(activateJob(job))
+    }
+    const deleteJobAction = (job: SingleJob) => {
+        dispatch(deleteJob(job))
     }
 
     const likeJobAction = (job: SingleJob) => {
@@ -61,6 +64,7 @@ export const useJobs = () => {
         likeJobAction,
         searchJobAction,
         filterJobAction,
-        orderJobAction
+        orderJobAction,
+        deleteJobAction
     }
 }

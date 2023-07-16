@@ -25,6 +25,10 @@ export const jobSlice = createSlice({
         },
         likeJob: (state, action) => {
             state.jobsLike.push(action.payload)
+            state.jobs = state.jobs.map(job => job.id === action.payload.id ? action.payload : job)
+        },
+       deleteJob: (state, action) => {
+            state.jobsSelected = state.jobsSelected.filter(job => job.id !== action.payload.id)
         },
         searchJob: (state, action) => {
             state.jobs = state.jobsFilter.filter(job => job.name.toLowerCase().includes(action.payload.toLowerCase()))
@@ -43,4 +47,4 @@ export const jobSlice = createSlice({
 
 })
 
-export const { activateJob, searchJob, filterJob, viewJob, selectJob, likeJob, orderJob } = jobSlice.actions;
+export const { activateJob, searchJob, deleteJob, filterJob, viewJob, selectJob, likeJob, orderJob } = jobSlice.actions;

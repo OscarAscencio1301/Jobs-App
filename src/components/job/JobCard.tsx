@@ -6,7 +6,7 @@ import { useComponents } from "../../hooks/components/useComponents"
 
 export const JobCard = ({ id, date, description, name, professionaldegree, type, status, selected, favorite }: SingleJob) => {
 
-    const { activateJobAction, likeJobAction } = useJobs()
+    const { activateJobAction, likeJobAction, jobsLike } = useJobs()
     const { changeViewModal } = useComponents()
 
     const addButton = () => {
@@ -15,7 +15,8 @@ export const JobCard = ({ id, date, description, name, professionaldegree, type,
     }
 
     const likeButton = () => {
-        likeJobAction({ id, date, description, name, professionaldegree, type, status, selected, favorite })
+        if(jobsLike.includes({ id, date, description, name, professionaldegree, type, status, selected, favorite })) return
+        likeJobAction({ id, date, description, name, professionaldegree, type, status, selected, favorite: !favorite })
     }
 
     return (

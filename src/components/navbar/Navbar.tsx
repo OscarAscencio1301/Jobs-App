@@ -16,7 +16,7 @@ export const Navbar = () => {
     <>
       <div className="bg-green-900 overflow-hidden max-w-full py-4 px-11 flex justify-between items-center">
         <Link to={'/'}><h1 className="text-white text-5xl">Jobs</h1></Link>
-        <div className="block lg:hidden" onClick={changeView}>
+        <div className="block cursor-pointer lg:hidden" onClick={changeView}>
           <FaBars color="white" size="25px" />
         </div>
         <div className="hidden lg:flex gap-20" onClick={changeView}>
